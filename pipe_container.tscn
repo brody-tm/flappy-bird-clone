@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ebcdkgsb1pgj"]
+
+[ext_resource type="Script" path="res://PipeContainer.gd" id="1_ob8j6"]
+[ext_resource type="PackedScene" uid="uid://d3iv56wjoogxw" path="res://pipe.tscn" id="2_sa86d"]
+
+[node name="PipeContainer" type="Node2D"]
+script = ExtResource("1_ob8j6")
+
+[node name="Pipe1" parent="." instance=ExtResource("2_sa86d")]
+position = Vector2(146, 389)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3iv56wjoogxw"]
+
+[ext_resource type="Texture2D" uid="uid://c57l15egmnlgy" path="res://flappy-bird-assets-master/sprites/pipe-green.png" id="1_qcfl2"]
+[ext_resource type="Script" path="res://pipe.gd" id="1_wg262"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqoxy"]
+size = Vector2(52, 320)
+
+[node name="Pipe" type="StaticBody2D"]
+position = Vector2(147.5, 430.5)
+script = ExtResource("1_wg262")
+
+[node name="BottomPipe" type="Sprite2D" parent="."]
+position = Vector2(185.5, 70.5)
+texture = ExtResource("1_qcfl2")
+
+[node name="TopPipe" type="Sprite2D" parent="."]
+position = Vector2(185.5, -350)
+rotation = 3.14159
+texture = ExtResource("1_qcfl2")
+
+[node name="PipeCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(185.5, 70.5)
+shape = SubResource("RectangleShape2D_pqoxy")
+
+[node name="PipeCollisionShape2" type="CollisionShape2D" parent="."]
+position = Vector2(185.5, -349.5)
+shape = SubResource("RectangleShape2D_pqoxy")

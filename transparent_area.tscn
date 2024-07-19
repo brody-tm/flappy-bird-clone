@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnuxpr4oq00re"]
+
+[ext_resource type="Script" path="res://transparent_area.gd" id="1_lt1b5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoatu"]
+size = Vector2(20, 100)
+
+[node name="TransparentArea" type="Area2D"]
+position = Vector2(184.5, -179.5)
+script = ExtResource("1_lt1b5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_xoatu")

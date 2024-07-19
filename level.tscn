@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwgfgkd7omr05"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_1lb05"]
+[ext_resource type="AudioStream" uid="uid://cyf1xvrv42gou" path="res://flappy-bird-assets-master/audio/hit.wav" id="3_aurgn"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_1lb05")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(130, 256)
+
+[node name="GameOverMarker" type="Marker2D" parent="."]
+visible = false
+position = Vector2(49, 212)
+
+[node name="GameStartMarker" type="Marker2D" parent="."]
+position = Vector2(54, 110)
+
+[node name="HitFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_aurgn")
