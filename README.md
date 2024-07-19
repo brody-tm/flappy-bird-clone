@@ -1,3 +1,6 @@
 ﻿# Flappy Bird clone made with Godot
 
-![Flappy Bird clone gif](https://github.com/user-attachments/assets/87d4e04d-7c1d-4830-9ccf-6fd7f750f93f)
+
+
+https://github.com/user-attachments/assets/09161fd5-a833-4cf8-a251-b8d483abaf56
+
