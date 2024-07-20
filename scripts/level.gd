@@ -1,9 +1,10 @@
 extends Node2D
 
 @onready var hit_fx = $HitFX
+@onready var point_fx = $PointFX
 
-var player_scene = preload("res://player.tscn")
-var pipes_scene = preload("res://pipe_container.tscn")
+var player_scene = preload("res://scenes/player.tscn")
+var pipes_scene = preload("res://scenes/pipe_container.tscn")
 
 func _ready():
 	# Time of day
@@ -46,7 +47,6 @@ func display_message():
 
 func initialize_player():
 	remove_node("Player")
-	#await get_tree().create_timer(0.1).timeout
 
 	var player = player_scene.instantiate()
 	var spawn_point = get_node("SpawnPoint")
@@ -57,10 +57,10 @@ func initialize_player():
 
 func initialize_pipes():
 	remove_node("Pipes")
-	#await get_tree().create_timer(0.1).timeout
 
 	var pipes = pipes_scene.instantiate()
 	pipes.name = "Pipes"
+	pipes.player_entered_pipes.connect(_on_player_entered_pipes)
 	add_child(pipes)
 
 func remove_node(node_name: String):
@@ -82,6 +82,10 @@ func player_death():
 	var game_over = TextureRect.new()
 	var game_over_marker = get_node("GameOverMarker")
 	
+	####### ddd
+	# $$$$$$$ ss 
+	# %%%%%%% a
+	
 	game_over.name = ("GameOver")
 	game_over.texture = load("res://flappy-bird-assets-master/sprites/gameover.png")
 	game_over.position = game_over_marker.position
@@ -91,3 +95,6 @@ func player_death():
 	remove_node(game_over.name)
 	
 	setup_game()
+
+func _on_player_entered_pipes():
+	point_fx.play()

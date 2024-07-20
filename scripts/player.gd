@@ -31,7 +31,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("m1"):
-		if velocity.y > 1000:
+		if velocity.y > 850:
 			whoosh_fx.play()
 		else:
 			wing_fx.play()
